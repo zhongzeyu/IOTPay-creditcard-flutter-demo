@@ -13,5 +13,5 @@ IOTPay-flutter is a plugin called in merchant app to collect consumer's credit/d
 <br /> card number, holder name, expiry date, CVV/CVC
 <br /> 
 2 provide add card, payment methods
-![alt text](https://github.com/zhongzeyu/IOTPay-android/blob/master/demo.png ) 
+![alt text](https://github.com/zhongzeyu/IOTPay-creditcard-flutter-demo/blob/master/demo.png) 
 <br />      
