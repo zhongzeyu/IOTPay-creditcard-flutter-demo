@@ -99,9 +99,7 @@ pay or add card
  [About the secureID please refer the '4 Temporary secureID'](https://github.com/IOTPaySDK/IOTPay-iOS/blob/main/README.md)<br /> 
 ```java
  dataProvider.sendRequest(
-                                                  controllerPaySecureID.text,
-                                                  IOTPayConfig.SimplePurchase,
-                                                  (dynamic result) {
+    PaySecureID,IOTPayConfig.SimplePurchase,(dynamic result) {
 
 
             //please process result in your own way, Ex: as following;
@@ -129,10 +127,7 @@ pay or add card
  [About the secureID please refer the '4 Temporary secureID'](https://github.com/IOTPaySDK/IOTPay-iOS/blob/main/README.md)<br /> 
 ```java
   dataProvider.sendRequest(
-                                                  controllerAddCardSecureID
-                                                      .text,
-                                                  IOTPayConfig.AddCard,
-                                                  (String result) {
+	AddCardSecureID,IOTPayConfig.AddCard,(String result) {
 
           //please process result in your own way, ex: showMsg("Payment Result:" + result);
         }
