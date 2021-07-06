@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
+// ignore: import_of_legacy_library_into_null_safe
 import 'package:iotpaycreditcard/config/IOTPayConfig.dart';
+// ignore: import_of_legacy_library_into_null_safe
 import 'package:iotpaycreditcard/generated/l10n.dart';
+// ignore: import_of_legacy_library_into_null_safe
 import 'package:iotpaycreditcard/iotpaycreditcard.dart';
+// ignore: import_of_legacy_library_into_null_safe
 import 'package:iotpaycreditcard/providers/dataProvider.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -11,7 +15,8 @@ void main() {
     localizationsDelegates: const [
       S.delegate,
       GlobalMaterialLocalizations.delegate,
-      GlobalWidgetsLocalizations.delegate
+      GlobalWidgetsLocalizations.delegate,
+      GlobalCupertinoLocalizations.delegate,
     ],
     supportedLocales: S.delegate.supportedLocales,
     home: MyApp(),
