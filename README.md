@@ -17,30 +17,33 @@ IOTPayCreditCard is a flutter plugin called in merchant app to collect consumer'
 
 
 ## Step 1: Install 
-<br /> 
-(1) add iotpaycreditcard dependency in pubspec.yaml
-```
+
+(1) add iotpaycreditcard dependency in pubspec.yaml.
+
+```java
    iotpaycreditcard: ^0.0.4
 ```
-(2) make sure provider dependence and flutter localization dependency is added.
-```
+(2) make sure provider and flutter localization dependencies are added.
+
+```java
   provider: ^5.0.0
   flutter_localizations:
     sdk: flutter
 ```
-<br /> 
+
 
 
 ## Step 2: Setup Widgets
 
 Import some packages.
 ```java
-import 'package:flutter/material.dart';
-import 'package:iotpaycreditcard/config/IOTPayConfig.dart';
-import 'package:iotpaycreditcard/iotpaycreditcard.dart';
-import 'package:iotpaycreditcard/providers/dataProvider.dart';
-import 'package:provider/provider.dart';
-import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:flutter/material.dart';
+import 'package:iotpaycreditcard/config/IOTPayConfig.dart';
+import 'package:iotpaycreditcard/generated/l10n.dart';
+import 'package:iotpaycreditcard/iotpaycreditcard.dart';
+import 'package:iotpaycreditcard/providers/dataProvider.dart';
+import 'package:provider/provider.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 ```
 
 Initial localizaion in MaterialApp
@@ -52,7 +55,7 @@ runApp(MaterialApp(
       GlobalWidgetsLocalizations.delegate
     ],
     supportedLocales: S.delegate.supportedLocales,
-    home:
+    home:...
 ```
 
 Add provider DataProvider
@@ -65,7 +68,7 @@ body: MultiProvider(
           ],
           child:
               Consumer<DataProvider>(builder: (context, dataProvider, child) {
-            return
+            return ...
 ```
 
 - creditCardStyle:
@@ -134,4 +137,15 @@ pay or add card
       });
 ```
 
-
+## Step 4: Debug or Release
+  an additional option is need as following: --no-sound-null-safety 
+  - Example:
+    Debug
+```java
+  flutter run  --no-sound-null-safety
+```
+    Release
+```java
+  flutter run --release  --no-sound-null-safety
+```
+...
