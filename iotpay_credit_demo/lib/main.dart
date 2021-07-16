@@ -54,6 +54,7 @@ class _State extends State<MyApp> {
           });
     }
 
+    String appKey = "5a8d12abb884f7b6f1f82e9675f8b58b";
     return Scaffold(
       appBar: AppBar(
         title: Text('IOTPay - Credit Demo'),
@@ -123,7 +124,7 @@ class _State extends State<MyApp> {
                                               dataProvider.sendRequest(
                                                   controllerPaySecureID.text,
                                                   IOTPayConfig.SimplePurchase,
-                                                  (dynamic result) {
+                                                  appKey, (dynamic result) {
                                                 print(
                                                     "=====call back result for simple purchase is :" +
                                                         result);
@@ -155,7 +156,7 @@ class _State extends State<MyApp> {
                                                   controllerAddCardSecureID
                                                       .text,
                                                   IOTPayConfig.AddCard,
-                                                  (String result) {
+                                                  appKey, (String result) {
                                                 print(
                                                     "=====call back result for add card is :" +
                                                         result);

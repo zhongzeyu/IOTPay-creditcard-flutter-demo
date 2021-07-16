@@ -21,7 +21,7 @@ IOTPayCreditCard is a flutter plugin called in merchant app to collect consumer'
 (1) add iotpaycreditcard dependency in pubspec.yaml.
 
 ```java
-   iotpaycreditcard: ^0.0.4
+   iotpaycreditcard: ^0.0.6
 ```
 (2) make sure provider and flutter localization dependencies are added.
 
@@ -38,9 +38,13 @@ IOTPayCreditCard is a flutter plugin called in merchant app to collect consumer'
 Import some packages.
 ```java
 import 'package:flutter/material.dart';
+// ignore: import_of_legacy_library_into_null_safe
 import 'package:iotpaycreditcard/config/IOTPayConfig.dart';
+// ignore: import_of_legacy_library_into_null_safe
 import 'package:iotpaycreditcard/generated/l10n.dart';
+// ignore: import_of_legacy_library_into_null_safe
 import 'package:iotpaycreditcard/iotpaycreditcard.dart';
+// ignore: import_of_legacy_library_into_null_safe
 import 'package:iotpaycreditcard/providers/dataProvider.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -56,6 +60,11 @@ runApp(MaterialApp(
     ],
     supportedLocales: S.delegate.supportedLocales,
     home:...
+```
+
+Set up APP Key
+```java
+String appKey = "5a8d12abb884f7b6f1f82e9675f8b58b";
 ```
 
 Add provider DataProvider
@@ -102,7 +111,7 @@ pay or add card
  [About the secureID please refer the '4 Temporary secureID'](https://github.com/IOTPaySDK/IOTPay-iOS/blob/main/README.md)<br /> 
 ```java
  dataProvider.sendRequest(
-    PaySecureID,IOTPayConfig.SimplePurchase,(dynamic result) {
+    PaySecureID,IOTPayConfig.SimplePurchase,appKey,(dynamic result) {
 
 
             //please process result in your own way, Ex: as following;
@@ -130,7 +139,7 @@ pay or add card
  [About the secureID please refer the '4 Temporary secureID'](https://github.com/IOTPaySDK/IOTPay-iOS/blob/main/README.md)<br /> 
 ```java
   dataProvider.sendRequest(
-	AddCardSecureID,IOTPayConfig.AddCard,(String result) {
+	AddCardSecureID,IOTPayConfig.AddCard,appKey,(String result) {
 
           //please process result in your own way, ex: showMsg("Payment Result:" + result);
         }
